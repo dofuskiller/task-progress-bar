@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Progress Tracker</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .progress-container {
+      background-color: #eee;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 20px 0;
+      height: 30px;
+    }
+    .progress-bar {
+      background-color: #4caf50;
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s;
+      text-align: center;
+      color: white;
+      line-height: 30px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 10px 0;
+    }
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Task Progress Tracker</h1>
+  
+  <div class="progress-container">
+    <div class="progress-bar" id="progress-bar">0%</div>
+  </div>
+
+  <ul id="task-list">
+    <li><input type="checkbox" /> Task 1</li>
+    <li><input type="checkbox" /> Task 2</li>
+    <li><input type="checkbox" /> Task 3</li>
+    <li><input type="checkbox" /> Task 4</li>
+    <li><input type="checkbox" /> Task 5</li>
+  </ul>
+
+  <script>
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const progressBar = document.getElementById('progress-bar');
+
+    function updateProgress() {
+      const total = checkboxes.length;
+      const checked = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
+      const percent = Math.round((checked / total) * 100);
+      progressBar.style.width = percent + '%';
+      progressBar.textContent = percent + '%';
+    }
+
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', updateProgress);
+    });
+  </script>
+</body>
+</html>
