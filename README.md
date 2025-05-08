@@ -41,7 +41,7 @@ Double-click the file, or right-click → “Open with browser”
 
 ## 🖼️ Screenshot
 
-![image](https://github.com/user-attachments/assets/c4befb93-99c4-4fce-91b4-1fb6c96bfedd)
+![image](https://github.com/user-attachments/assets/9ae510f6-77f4-4788-a101-0390daaa2fc6)
 
 ---
 
